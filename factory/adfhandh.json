@@ -1,0 +1,9 @@
+{
+	"name": "adfhandh",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b6b2128e-a3a6-4f82-92e1-69d4f807f3ac",
+		"tenantId": "50de9614-a8f6-406f-b95b-fcae7911b5ed"
+	}
+}
