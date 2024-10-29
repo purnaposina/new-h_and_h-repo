@@ -17,6 +17,16 @@
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
+						"additionalColumns": [
+							{
+								"name": "sourcecontainer",
+								"value": "$$FILENAME"
+							},
+							{
+								"name": "dup_name",
+								"value": "$$COLUMN:country"
+							}
+						],
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
@@ -34,7 +44,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ""
 						}
 					},
 					"enableStaging": false,
