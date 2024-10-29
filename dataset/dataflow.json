@@ -1,21 +1,16 @@
 {
-	"name": "DelimitedText2",
+	"name": "dataflow",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_source_blob",
+			"referenceName": "targer_linkedservice",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"filename": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "sourcecontainer"
+				"container": "target"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -24,19 +19,11 @@
 		},
 		"schema": [
 			{
-				"name": "DEPARTMENT_ID",
+				"name": "ID",
 				"type": "String"
 			},
 			{
-				"name": "DEPARTMENT_NAME",
-				"type": "String"
-			},
-			{
-				"name": "MANAGER_ID",
-				"type": "String"
-			},
-			{
-				"name": "LOCATION_ID",
+				"name": "Industry",
 				"type": "String"
 			}
 		]
