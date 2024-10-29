@@ -50,6 +50,10 @@
 						"referenceName": "ds_csv",
 						"type": "DatasetReference",
 						"parameters": {
+							"filename": {
+								"value": "@pipeline().parameters.filename",
+								"type": "Expression"
+							},
 							"folderpath": {
 								"value": "@pipeline().parameters.folderpath",
 								"type": "Expression"
@@ -66,10 +70,10 @@
 			}
 		],
 		"parameters": {
-			"folderpath": {
+			"filename": {
 				"type": "string"
 			},
-			"filename": {
+			"folderpath": {
 				"type": "string"
 			}
 		},
