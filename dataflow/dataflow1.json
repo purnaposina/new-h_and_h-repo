@@ -54,7 +54,7 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"lookup1 derive(multiplyBy10 = multiply(Salary,10)) ~> derivedColumn1",
+				"lookup1 derive(multiplyBy10 = iif(DEPARTMENT_NAME == 'IT', Salary * 10, Salary)) ~> derivedColumn1",
 				"salary, department lookup(ID == DEPARTMENT_ID,",
 				"     multiple: true,",
 				"     broadcast: 'auto')~> lookup1"
