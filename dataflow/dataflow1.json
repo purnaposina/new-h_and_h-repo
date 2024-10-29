@@ -26,13 +26,19 @@
 				},
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "lookup1"
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     parameter1 as string (DEPARTMENT_NAME == 'IT')",
+				"}",
 				"source(output(",
 				"          ID as string,",
 				"          YearsExperience as string,",
-				"          Salary as string",
+				"          Salary as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -51,7 +57,10 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"join1 derive(newsalary = DEPARTMENT_IDiif(DEPARTMENT_NAME=='it',Salary* 10, Salary)) ~> derivedColumn1"
+				"lookup1 derive(multiplyBy10 = multiply(Salary,10)) ~> derivedColumn1",
+				"salary, department lookup(ID == DEPARTMENT_ID,",
+				"     multiple: true,",
+				"     broadcast: 'auto')~> lookup1"
 			]
 		}
 	}
