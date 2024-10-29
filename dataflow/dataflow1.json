@@ -32,9 +32,6 @@
 				}
 			],
 			"scriptLines": [
-				"parameters{",
-				"     parameter1 as string (DEPARTMENT_NAME == 'IT')",
-				"}",
 				"source(output(",
 				"          ID as string,",
 				"          YearsExperience as string,",
