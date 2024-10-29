@@ -1,0 +1,31 @@
+{
+	"name": "dataflowderivedcoloumn",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "targer_linkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "target"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "Industry",
+				"type": "String"
+			}
+		]
+	}
+}

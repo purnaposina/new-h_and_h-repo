@@ -19,7 +19,15 @@
 					"name": "department"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dataflowderivedcoloumn",
+						"type": "DatasetReference"
+					},
+					"name": "dataflowsink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "join1"
@@ -57,7 +65,15 @@
 				"lookup1 derive(multiplyBy10 = iif(DEPARTMENT_NAME == 'IT', Salary * 10, Salary)) ~> derivedColumn1",
 				"salary, department lookup(ID == DEPARTMENT_ID,",
 				"     multiple: true,",
-				"     broadcast: 'auto')~> lookup1"
+				"     broadcast: 'auto')~> lookup1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          ID as string,",
+				"          Industry as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> dataflowsink1"
 			]
 		}
 	}
