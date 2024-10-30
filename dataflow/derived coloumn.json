@@ -22,7 +22,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "dataflowderivedcoloumn",
+						"referenceName": "DelimitedText2",
 						"type": "DatasetReference"
 					},
 					"name": "dataflowsink1"
@@ -66,14 +66,12 @@
 				"salary, department lookup(ID == DEPARTMENT_ID,",
 				"     multiple: true,",
 				"     broadcast: 'auto')~> lookup1",
-				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"derivedColumn1 sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
-				"     input(",
-				"          ID as string,",
-				"          Industry as string",
-				"     ),",
+				"     partitionFileNames:['test'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> dataflowsink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> dataflowsink1"
 			]
 		}
 	}
