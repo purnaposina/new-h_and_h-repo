@@ -602,6 +602,33 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "targer_linkedservice",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "receiving"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/targer_linkedservice')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Parquet1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1012,7 +1039,7 @@
 					"sinks": [
 						{
 							"dataset": {
-								"referenceName": "dataflowderivedcoloumn",
+								"referenceName": "DelimitedText2",
 								"type": "DatasetReference"
 							},
 							"name": "dataflowsink1"
@@ -1058,19 +1085,17 @@
 						"     broadcast: 'auto')~> lookup1",
 						"derivedColumn1 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
-						"     input(",
-						"          ID as string,",
-						"          Industry as string",
-						"     ),",
+						"     partitionFileNames:['test'],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> dataflowsink1"
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> dataflowsink1"
 					]
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/dataflowsalary')]",
 				"[concat(variables('factoryId'), '/datasets/dataflowdepartment')]",
-				"[concat(variables('factoryId'), '/datasets/dataflowderivedcoloumn')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]"
 			]
 		}
 	]
