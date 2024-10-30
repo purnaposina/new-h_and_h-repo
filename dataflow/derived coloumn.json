@@ -66,7 +66,7 @@
 				"salary, department lookup(ID == DEPARTMENT_ID,",
 				"     multiple: true,",
 				"     broadcast: 'auto')~> lookup1",
-				"derivedColumn1 sink(allowSchemaDrift: false,",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['test'],",
 				"     skipDuplicateMapInputs: true,",
