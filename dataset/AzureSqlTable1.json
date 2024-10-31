@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "int",
-			"table": "employees"
+			"table": "departments"
 		}
 	}
 }
