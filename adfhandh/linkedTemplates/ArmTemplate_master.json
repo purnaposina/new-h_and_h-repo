@@ -7,9 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfhandh"
 		},
-		"MySql1_password": {
+		"AzureSqlDatabase_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'MySql1'"
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase'"
 		},
 		"ls_source_blob_connectionString": {
 			"type": "secureString",
@@ -19,17 +19,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'targer_linkedservice'"
 		},
-		"MySql1_properties_typeProperties_server": {
+		"AzureSqlDatabase_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "mysql"
+			"defaultValue": "pdurga.database.windows.net"
 		},
-		"MySql1_properties_typeProperties_database": {
+		"AzureSqlDatabase_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "mysql"
+			"defaultValue": "SQLDB_TEST1"
 		},
-		"MySql1_properties_typeProperties_username": {
+		"AzureSqlDatabase_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "root"
+			"defaultValue": "pdurga"
 		},
 		"containerUri": {
 			"type": "string",
@@ -58,8 +58,8 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"MySql1_password": {
-						"value": "[parameters('MySql1_password')]"
+					"AzureSqlDatabase_password": {
+						"value": "[parameters('AzureSqlDatabase_password')]"
 					},
 					"ls_source_blob_connectionString": {
 						"value": "[parameters('ls_source_blob_connectionString')]"
@@ -67,14 +67,14 @@
 					"targer_linkedservice_connectionString": {
 						"value": "[parameters('targer_linkedservice_connectionString')]"
 					},
-					"MySql1_properties_typeProperties_server": {
-						"value": "[parameters('MySql1_properties_typeProperties_server')]"
+					"AzureSqlDatabase_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_server')]"
 					},
-					"MySql1_properties_typeProperties_database": {
-						"value": "[parameters('MySql1_properties_typeProperties_database')]"
+					"AzureSqlDatabase_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_database')]"
 					},
-					"MySql1_properties_typeProperties_username": {
-						"value": "[parameters('MySql1_properties_typeProperties_username')]"
+					"AzureSqlDatabase_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_userName')]"
 					}
 				}
 			},

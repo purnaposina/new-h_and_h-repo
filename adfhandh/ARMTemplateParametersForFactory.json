@@ -5,7 +5,7 @@
 		"factoryName": {
 			"value": "adfhandh"
 		},
-		"MySql1_password": {
+		"AzureSqlDatabase_password": {
 			"value": ""
 		},
 		"ls_source_blob_connectionString": {
@@ -14,14 +14,14 @@
 		"targer_linkedservice_connectionString": {
 			"value": ""
 		},
-		"MySql1_properties_typeProperties_server": {
-			"value": "mysql"
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "pdurga.database.windows.net"
 		},
-		"MySql1_properties_typeProperties_database": {
-			"value": "mysql"
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "SQLDB_TEST1"
 		},
-		"MySql1_properties_typeProperties_username": {
-			"value": "root"
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "pdurga"
 		}
 	}
 }
