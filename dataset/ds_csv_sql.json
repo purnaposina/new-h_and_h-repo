@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText3",
+	"name": "ds_csv_sql",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_source_blob",

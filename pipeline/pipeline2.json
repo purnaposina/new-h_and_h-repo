@@ -45,7 +45,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText3",
+						"referenceName": "ds_csv_sql",
 						"type": "DatasetReference",
 						"parameters": {
 							"filename": {
