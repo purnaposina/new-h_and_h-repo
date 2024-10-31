@@ -5,12 +5,20 @@
 			"referenceName": "ls_source_blob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": ".csv",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"container": "sourcecontainer"
 			},
 			"columnDelimiter": ",",
