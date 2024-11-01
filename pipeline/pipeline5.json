@@ -159,10 +159,7 @@
 							"type": "String"
 						},
 						"StartTime": {
-							"value": {
-								"value": "@pipeline().TriggerTime",
-								"type": "Expression"
-							},
+							"value": null,
 							"type": "DateTime"
 						}
 					}
