@@ -1,5 +1,5 @@
 {
-	"name": "lookup",
+	"name": "ds__s_lookup",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase",

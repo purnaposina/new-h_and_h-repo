@@ -69,7 +69,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "lookup",
+									"referenceName": "ds__s_lookup",
 									"type": "DatasetReference"
 								}
 							]
