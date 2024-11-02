@@ -156,7 +156,10 @@
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "SQL_Naga_Test"
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase')]"
@@ -198,6 +201,11 @@
 					"referenceName": "ls_source_blob",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"p_filename": {
+						"type": "array"
+					}
+				},
 				"folder": {
 					"name": "Naga"
 				},
@@ -206,6 +214,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": "company (1).csv",
 						"container": "sourcecontainer"
 					},
 					"columnDelimiter": ",",
