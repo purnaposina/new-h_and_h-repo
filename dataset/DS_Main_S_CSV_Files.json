@@ -5,11 +5,6 @@
 			"referenceName": "ls_source_blob",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"p_filename": {
-				"type": "array"
-			}
-		},
 		"folder": {
 			"name": "Naga"
 		},
