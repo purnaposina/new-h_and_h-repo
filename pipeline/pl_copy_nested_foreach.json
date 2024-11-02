@@ -114,7 +114,7 @@
 		],
 		"parameters": {
 			"P_File_Name": {
-				"type": "array"
+				"type": "string"
 			},
 			"schema_name": {
 				"type": "string"
