@@ -153,12 +153,26 @@
 					"referenceName": "AzureSqlDatabase",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"file_name": {
+						"type": "string"
+					},
+					"schema": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "SQL_Naga_Test"
+					"schema": {
+						"value": "@dataset().schema",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@dataset().file_name",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [

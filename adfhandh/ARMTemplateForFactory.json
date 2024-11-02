@@ -1411,7 +1411,16 @@
 										{
 											"referenceName": "AzureSqlTable3",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"file_name": {
+													"value": "@pipeline().parameters.P_File_Name",
+													"type": "Expression"
+												},
+												"schema": {
+													"value": "@pipeline().parameters.schema_name",
+													"type": "Expression"
+												}
+											}
 										}
 									]
 								}
@@ -1425,6 +1434,9 @@
 				"parameters": {
 					"P_File_Name": {
 						"type": "array"
+					},
+					"schema_name": {
+						"type": "string"
 					}
 				},
 				"variables": {
@@ -1581,12 +1593,26 @@
 					"referenceName": "AzureSqlDatabase",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"file_name": {
+						"type": "string"
+					},
+					"schema": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "SQL_Naga_Test"
+					"schema": {
+						"value": "@dataset().schema",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@dataset().file_name",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
