@@ -7,7 +7,7 @@
 		},
 		"parameters": {
 			"p_filename": {
-				"type": "array"
+				"type": "string"
 			}
 		},
 		"folder": {
@@ -18,6 +18,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().p_filename",
+					"type": "Expression"
+				},
 				"container": "sourcecontainer"
 			},
 			"columnDelimiter": ",",
