@@ -71,12 +71,8 @@
 								},
 								"enableStaging": false,
 								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
+									"value": "@json(item().P_File_Name.name)",
+									"type": "Expression"
 								}
 							},
 							"inputs": [
