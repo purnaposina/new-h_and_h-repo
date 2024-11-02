@@ -1385,11 +1385,7 @@
 											"tableOption": "autoCreate",
 											"disableMetricsCollection": false
 										},
-										"enableStaging": false,
-										"translator": {
-											"value": "@json(item().P_File_Name.name)",
-											"type": "Expression"
-										}
+										"enableStaging": false
 									},
 									"inputs": [
 										{
@@ -1522,7 +1518,7 @@
 										"waitOnCompletion": true,
 										"parameters": {
 											"P_File_Name": {
-												"value": "@activity('Get Metadata1').output.childItems",
+												"value": "@variables('File_Name')",
 												"type": "Expression"
 											},
 											"schema_name": "dbo"
