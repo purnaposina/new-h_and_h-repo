@@ -1,9 +1,9 @@
 {
-	"name": "tablenames",
+	"name": "incre",
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "tablenames",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
